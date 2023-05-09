@@ -22,7 +22,7 @@ def boom() -> Response:
     return "gotemcoach", 200
 
 @app.route('/snag', methods=['GET'])
-def boom() -> Response:
+def snag() -> Response:
     highscores = sb.table("Highscores").select("*").execute()
     return jsonify(highscores), 200
 
