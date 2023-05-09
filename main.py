@@ -24,7 +24,7 @@ def boom() -> Response:
 @app.route('/snag', methods=['GET'])
 def snag() -> Response:
     highscores = sb.table("Highscores").select("*").execute()
-    return jsonify(highscores), 200
+    return jsonify(json.loads(highscores)), 200
 
 if __name__ == '__main__':
     app.run()
