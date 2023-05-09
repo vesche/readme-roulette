@@ -1,5 +1,5 @@
 import os, random, json
-from flask import Flask, Response, send_file, request, jsonfiy
+from flask import Flask, Response, send_file, request, jsonify
 
 app = Flask(__name__)
 gifs = os.listdir('gifs')
