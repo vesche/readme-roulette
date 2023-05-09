@@ -24,7 +24,9 @@ def boom() -> Response:
 @app.route('/snag', methods=['GET'])
 def snag() -> Response:
     highscores = sb.table("Highscores").select("*").execute()
-    return jsonify(json.loads(highscores.json())), 200
+    snag_response = jsonify(json.loads(highscores.json()))
+    snag_response.headers.add('Access-Control-Allow-Origin', '*')
+    return snag_response, 200
 
 if __name__ == '__main__':
     app.run()
